@@ -5,6 +5,14 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20191029174626_Initial_Migration.cs" />
+    <Compile Remove="Migrations\20191029175822_Modified_Address_Migration.cs" />
+    <Compile Remove="Migrations\20191029180042_Modified_Address_Migration.cs" />
+    <Compile Remove="Migrations\20191029180127_Modified_Address_Migration.cs" />
+    <Compile Remove="Migrations\20191029180225_Initial_Migration.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -14,6 +22,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
