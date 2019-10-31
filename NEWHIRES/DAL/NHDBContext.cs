@@ -21,7 +21,7 @@ namespace NEWHIRES.DAL
         public virtual DbSet<BackgroundInfo> BackgroundInfo { get; set; }
         public virtual DbSet<DOT> DOT { get; set; }
         public virtual DbSet<DirectDeposit> DirectDeposit { get; set; }
-        public virtual DbSet<DrivingLicense> DrivingLicense { get; set; }
+        public virtual DbSet<DriversLicense> DriversLicense { get; set; }
         public virtual DbSet<EmergencyContacts> EmergencyContacts { get; set; }
         public virtual DbSet<Employer> Employer { get; set; }
         public virtual DbSet<EmploymentRecord> EmploymentRecord { get; set; }
@@ -47,7 +47,7 @@ namespace NEWHIRES.DAL
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=NHDB;Persist Security Info=True;User ID=sa;Password=Systems2019!");
+                //optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=NHDB;Persist Security Info=True;User ID=sa;Password=Systems2019!");
             }
         }
 
@@ -306,9 +306,10 @@ namespace NEWHIRES.DAL
                     .HasConstraintName("FK_DirectDeposit_ApplicationInfo");
             });
 
-            modelBuilder.Entity<DrivingLicense>(entity =>
+            modelBuilder.Entity<DriversLicense>(entity =>
             {
-                entity.HasKey(e => e.EntryID);
+                entity.HasKey(e => e.EntryID)
+                    .HasName("PK_DrivingLicense");
 
                 entity.Property(e => e.DL_Expiration).HasColumnType("date");
 
@@ -331,7 +332,7 @@ namespace NEWHIRES.DAL
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.App)
-                    .WithMany(p => p.DrivingLicense)
+                    .WithMany(p => p.DriversLicense)
                     .HasForeignKey(d => d.AppID)
                     .HasConstraintName("FK_DrivingLicense_ApplicationInfo");
             });

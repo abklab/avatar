@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NEWHIRES.DAL
 {
-    public partial class DrivingLicense
+    public partial class DriversLicense
     {
         public int EntryID { get; set; }
         public int? AppID { get; set; }

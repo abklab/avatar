@@ -33,6 +33,7 @@ namespace NEWHIRES
             });
 
             services.AddDbContext<NHDBContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("NHDB")));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

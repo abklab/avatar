@@ -11,7 +11,7 @@ namespace NEWHIRES.DAL
             ApplicationWaiver = new HashSet<ApplicationWaiver>();
             BackgroundInfo = new HashSet<BackgroundInfo>();
             DirectDeposit = new HashSet<DirectDeposit>();
-            DrivingLicense = new HashSet<DrivingLicense>();
+            DriversLicense = new HashSet<DriversLicense>();
             EmergencyContacts = new HashSet<EmergencyContacts>();
             EmploymentRecord = new HashSet<EmploymentRecord>();
             EmploymentScreening = new HashSet<EmploymentScreening>();
@@ -35,7 +35,7 @@ namespace NEWHIRES.DAL
         public virtual ICollection<ApplicationWaiver> ApplicationWaiver { get; set; }
         public virtual ICollection<BackgroundInfo> BackgroundInfo { get; set; }
         public virtual ICollection<DirectDeposit> DirectDeposit { get; set; }
-        public virtual ICollection<DrivingLicense> DrivingLicense { get; set; }
+        public virtual ICollection<DriversLicense> DriversLicense { get; set; }
         public virtual ICollection<EmergencyContacts> EmergencyContacts { get; set; }
         public virtual ICollection<EmploymentRecord> EmploymentRecord { get; set; }
         public virtual ICollection<EmploymentScreening> EmploymentScreening { get; set; }
